@@ -1,0 +1,44 @@
+<section>
+
+</section>
+<main>
+  <section id="RegPlayer" ng-controller="PlayerController as ctrl">
+    <form name="frmRegPlayer" action="index.html" method="post">
+      <div class="">
+        <label for="">Código</label>
+        <input type="text" name="code" ng-model="ctrl.code" value="">
+      </div>
+      <div class="">
+        <label for="">Primer Nombre</label>
+        <input type="text" name="firstName" ng-model="ctrl.firstName" value="">
+      </div>
+      <div class="">
+        <label for="">Segundo Nombre</label>
+        <input type="text" name="secondName" ng-model="ctrl.secondName" value="">
+      </div>
+      <div class="">
+        <label for="">Primer Apellido</label>
+        <input type="text" name="lastName" ng-model="ctrl.lastName" value="">
+      </div>
+      <div class="">
+        <label for="">Segundo Apellido</label>
+        <input type="text" name="secondLastName" ng-model="ctrl.secondLastName" value="">
+      </div>
+      <div class="">
+        <label for="">Alias</label>
+        <input type="text" name="nickName" ng-model="ctrl.nickName" value="">
+      </div>
+      <div class="">
+        <label for="">Cantidad de dinero</label>
+        <input type="number" name="money" ng-model="money" value="">
+      </div>
+      <div class="">
+        <label for="">Foto</label>
+        <input type="file" name="photo" ng-model="ctrl.photo" value="">
+      </div>
+      <div class="">
+        <input type="button" name="Registrar" value="Register" ng-click="ctrl.save()" ng-disabled="frmRegPlayer.$invalid">
+      </div>
+    </form>
+  </section>
+</main>
