@@ -30,15 +30,31 @@
       </div>
       <div class="">
         <label for="">Cantidad de dinero</label>
-        <input type="number" name="money" ng-model="money" value="">
+        <input type="number" name="money" ng-model="ctrl.money" value="">
       </div>
       <div class="">
         <label for="">Foto</label>
-        <input type="file" name="photo" ng-model="ctrl.photo" value="">
+        <input type="file" name="photo" ng-model="ctrl.photo" value="" id="photo">
       </div>
+
+
       <div class="">
-        <input type="button" name="Registrar" value="Register" ng-click="ctrl.save()" ng-disabled="frmRegPlayer.$invalid">
+        <input type="button" name="Registrar" value="Register" ng-click="ctrl.preSave()" ng-disabled="frmRegPlayer.$invalid">
       </div>
     </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Alias</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="userPlayer in ctrl.players">
+          <th><img height="60px" width="80px" ng-src="{{userPlayer.photo}}"></th>
+          <th>{{userPlayer.nickName}}</th>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </main>

@@ -15,6 +15,11 @@
       .state('regPlayer', {
         url: '/regPlayer',
         templateUrl: './components/registerPlayer/regPlayer.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/registerPlayer/regPlayer.controller.js')
+          }]
+        },
         controller: 'PlayerController',
         controllerAs: 'ctrl'
       })

@@ -4,17 +4,30 @@
     .module('PlayersApp')
     .controller('PlayerController', PlayerController);
 
-  PlayerController.$inject = ['PlayerService'];
+  PlayerController.$inject = ['PlayerService', 'ImageService', 'Upload'];
 
-  function PlayerController(PlayerService) {
+  function PlayerController(PlayerService, ImageService, Upload) {
     var playerCtrl = this;
+    playerCtrl.cloudObj = ImageService.getConfiguration();
 
     function init() {
       playerCtrl.players = PlayerService.getPlayers();
       playerCtrl.player = {};
     }init();
 
-    playerCtrl.save = function(pNewPlayer) {
+    playerCtrl.preSave = function() {
+      playerCtrl.cloudObj.data.file = document.getElementById("photo").files[0];
+      if (playerCtrl.cloudObj.data.file == null) {
+        playerCtrl.save();
+      }else{
+      Upload.upload(playerCtrl.cloudObj)
+        .success(function(data) {
+          playerCtrl.save(data.url);
+        });
+      }
+    };
+
+    playerCtrl.save = function(pimage) {
       var newPlayer = {
         code: playerCtrl.code,
         firstName: playerCtrl.firstName,
@@ -23,7 +36,7 @@
         secondLastName: playerCtrl.secondLastName,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
-        photo: playerCtrl.photo
+        photo: pimage
       }
       var Validation = PlayerService.noRepeat(newPlayer);
       if (Validation === false){
@@ -44,7 +57,7 @@
       playerCtrl.photo = pPlayer.photo;
     };
 
-    playerCtrl.update = function() {
+    playerCtrl.update = function(pimage) {
       var EditPlayer = {
         code: playerCtrl.code,
         firstName: playerCtrl.firstName,
@@ -53,7 +66,7 @@
         secondLastName: playerCtrl.secondLastName,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
-        photo: playerCtrl.photo
+        photo: pimage
       };
       PlayerService.updatePlayer(EditPlayer);
       init();

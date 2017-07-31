@@ -5,6 +5,8 @@
     .service('PlayerService', PlayerService)
 
   function PlayerService() {
+    var players = [];
+    
     var publicAPI = {
       setPlayers: _setPlayers,
       getPlayers: _getPlayers,
