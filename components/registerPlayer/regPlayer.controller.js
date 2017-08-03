@@ -30,10 +30,7 @@
     playerCtrl.save = function(pimage) {
       var newPlayer = {
         code: playerCtrl.code,
-        firstName: playerCtrl.firstName,
-        secondName: playerCtrl.secondName,
-        lastName: playerCtrl.lastName,
-        secondLastName: playerCtrl.secondLastName,
+        name: playerCtrl.name,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
         photo: pimage
@@ -48,10 +45,7 @@
 
     playerCtrl.getInfo = function(pPlayer){
       playerCtrl.code = pPlayer.code;
-      playerCtrl.firstName = pPlayer.firstName;
-      playerCtrl.secondName = pPlayer.secondName;
-      playerCtrl.lastName = pPlayer.lastName;
-      playerCtrl.secondLastName = pPlayer.secondLastName;
+      playerCtrl.name = pPlayer.name;
       playerCtrl.nickName = pPlayer.nickName;
       playerCtrl.money = pPlayer.money;
       playerCtrl.photo = pPlayer.photo;
@@ -60,10 +54,7 @@
     playerCtrl.update = function(pimage) {
       var EditPlayer = {
         code: playerCtrl.code,
-        firstName: playerCtrl.firstName,
-        secondName: playerCtrl.secondName,
-        lastName: playerCtrl.lastName,
-        secondLastName: playerCtrl.secondLastName,
+        name: playerCtrl.name,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
         photo: pimage
@@ -75,10 +66,7 @@
 
     function clear() {
       playerCtrl.code = '';
-      playerCtrl.firstName = '';
-      playerCtrl.secondName = '';
-      playerCtrl.lastName = '';
-      playerCtrl.secondLastName = '';
+      playerCtrl.name = '';
       playerCtrl.nickName = '';
       playerCtrl.money = '';
       playerCtrl.photo = '';

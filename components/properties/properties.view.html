@@ -1,0 +1,50 @@
+<section>
+
+</section>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Identificación</th>
+        <th>Posición</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="userProperty in ctrl.properties">
+        <th>{{userProperty.name}}</th>
+        <th>{{userProperty.id}}</th>
+        <th>{{userProperty.position}}</th>
+        <th>{{userProperty.price}}</th>
+        <th><input type="button" name="Comprar" value="Comprar" ng-click="ctrl.Buy(userProperty)"></th>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <div class="modal fade" id="modalProperty" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" id="notReg">
+        <div class="">
+          <label>Usuarios</label>
+          <select name="userList" ng-model="ctrl.userList">
+            <option value="">--Seleccione un usuario--</option>
+            <option ng-repeat="players in ctrl.players" value="{{players.name}}">{{players.name}}</option>
+          </select>
+        </div>
+        <div class="">
+          <input type="button" name="" value="Realizar Compra" ng-click="ctrl.perform()">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

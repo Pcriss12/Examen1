@@ -23,6 +23,18 @@
         controller: 'PlayerController',
         controllerAs: 'ctrl'
       })
+      .state('properties', {
+        url: '/properties',
+        templateUrl: './components/properties/properties.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/properties/properties.controller.js')
+          }]
+        },
+        controller: 'PropertyController',
+        controllerAs: 'ctrl'
+      })
+
 
     $urlRouterProvider.otherwise('/landing');
   }
