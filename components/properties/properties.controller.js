@@ -21,5 +21,18 @@
       console.log(userProperty);
     };
 
+    propertyCtrl.perform = function(userPlayer){
+      var playerList =  PlayerService.getPlayers();
+      var player = '';
+
+      for (var i = 0; i < playerList.length; i++) {
+        if (userPlayer === playerList[i].name) {
+          player = playerList[i];
+        }
+      }
+      console.log(player);
+
+    };
+
   };
 })();

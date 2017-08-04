@@ -1,27 +1,45 @@
 <section>
-
+  <div class="col-md-4" ng-repeat="userProperty in ctrl.properties">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="hvr-underline-from-center">{{userProperty.name}}</h3>
+        </div>
+        <div class="card-body">
+          <p>Identificación: {{userProperty.id}}</p>
+          <p>Posición: {{userProperty.position}}</p>
+          <p>Precio: {{userProperty.price}}</p>
+        </div>
+        <nav class="nav-tabs">
+          <ul class="nav nav-pills pull-left">
+            <input type="button" name="Comprar" value="Comprar" id="btnBuy" ng-click="ctrl.Buy(userProperty)">
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 </section>
-<section>
+<!-- <section>
   <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Identificación</th>
-        <th>Posición</th>
-        <th>Precio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="userProperty in ctrl.properties">
-        <th>{{userProperty.name}}</th>
-        <th>{{userProperty.id}}</th>
-        <th>{{userProperty.position}}</th>
-        <th>{{userProperty.price}}</th>
-        <th><input type="button" name="Comprar" value="Comprar" ng-click="ctrl.Buy(userProperty)"></th>
-      </tr>
-    </tbody>
-  </table>
-</section>
+-    <thead>
+-      <tr>
+-        <th>Nombre</th>
+-        <th>Identificación</th>
+-        <th>Posición</th>
+-        <th>Precio</th>
+-      </tr>
+-    </thead>
+-    <tbody>
+-      <tr ng-repeat="userProperty in ctrl.properties">
+-        <th>{{userProperty.name}}</th>
+-        <th>{{userProperty.id}}</th>
+-        <th>{{userProperty.position}}</th>
+-        <th>{{userProperty.price}}</th>
+-        <th><input type="button" name="Comprar" value="Comprar" ng-click="ctrl.Buy(userProperty)"></th>
+-      </tr>
+-    </tbody>
+-  </table>
+</section> -->
 <section>
   <div class="modal fade" id="modalProperty" role="dialog">
   <div class="modal-dialog modal-sm">
@@ -37,8 +55,8 @@
             <option ng-repeat="players in ctrl.players" value="{{players.name}}">{{players.name}}</option>
           </select>
         </div>
-        <div class="">
-          <input type="button" name="" value="Realizar Compra" ng-click="ctrl.perform()">
+        <div>
+          <input type="button" name="" id="btnBuy" value="Realizar Compra" ng-click="ctrl.perform(ctrl.userList)">
         </div>
       </div>
       <div class="modal-footer">
