@@ -8,19 +8,29 @@
 
   function PropertyController(PropertyService, PlayerService) {
     var propertyCtrl = this;
+    propertyCtrl.propertySelected = {};
 
     function init() {
       propertyCtrl.properties = PropertyService.getProperty();
       propertyCtrl.property = {};
+      propertyCtrl.propertySelected = {};
       propertyCtrl.players = PlayerService.getPlayers();
     }init();
 
-    propertyCtrl.Buy = function(userProperty){
+    propertyCtrl.Buy = function(property){
       $("#modalProperty").modal();
-
-      console.log(userProperty);
+      sendProperty(property);
     };
+  function sendProperty(property) {
+      propertyCtrl.propertySelected = {};
+      propertyCtrl.propertySelected = property;
+    }
+    function sendProperty(property) {
+      var propertySelected = '';
+      propertySelected = property;
 
+      propertyCtrl.propertySelected = propertySelected;
+    }
     propertyCtrl.perform = function(userPlayer){
       var playerList =  PlayerService.getPlayers();
       var player = '';
@@ -30,9 +40,18 @@
           player = playerList[i];
         }
       }
-      console.log(player);
 
+      update(player, propertyCtrl.propertySelected);
     };
 
+    function update(player, propertySelected) {
+      var buy = {
+        player,
+        propertySelected
+      }
+      PropertyService.updateProperty(buy);
+      init();
+      ctrl.userList = '';
+    };
   };
 })();

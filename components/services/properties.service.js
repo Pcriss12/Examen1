@@ -739,13 +739,15 @@
       }
       return propertyList;
     }
-    function _updateProperty(pObjProperty) {
+
+    function _updateProperty(pPropertyBuy) {
       var propertyList = _getProperty();
       for (var i = 0; i < propertyList.length; i++) {
-        if (propertyList[i].code == pObjProperty.code) {
-          propertyList[i] = pObjProperty;
+        if (propertyList[i].name == pPropertyBuy.propertySelected.name) {
+          propertyList[i].ownedby = pPropertyBuy.player;
         }
       }
+      console.log(propertyList);
       localStorage.setItem('lsPropertyList', JSON.stringify(propertyList));
     }
 

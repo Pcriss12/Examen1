@@ -4,13 +4,15 @@
 <main>
   <section id="RegPlayer" ng-controller="PlayerController as ctrl">
     <form name="frmRegPlayer" action="index.html" method="post">
-      <div class="">
-        <label for="">Código</label>
-        <input type="text" name="code" ng-model="ctrl.code" value="">
-      </div>
-      <div class="">
-        <label for="">Nombre</label>
-        <input type="text" name="name" ng-model="ctrl.name" value="">
+      <div class="col-md-6 formStyle">
+        <div class="">
+          <label for="">Código</label>
+          <input type="number" name="code" ng-model="ctrl.code" value="">
+        </div>
+        <div class="">
+          <label for="">Nombre</label>
+          <input type="text" name="name" ng-model="ctrl.name" value="">
+        </div>
       </div>
       <div class="">
         <label for="">Alias</label>

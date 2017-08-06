@@ -12,7 +12,7 @@
         url: '/landing',
         templateUrl: './components/landing/landing.view.html',
       })
-      .state('regPlayer', {
+      .state('landing.regPlayer', {
         url: '/regPlayer',
         templateUrl: './components/registerPlayer/regPlayer.view.html',
         resolve: {
@@ -23,7 +23,7 @@
         controller: 'PlayerController',
         controllerAs: 'ctrl'
       })
-      .state('properties', {
+      .state('landing.properties', {
         url: '/properties',
         templateUrl: './components/properties/properties.view.html',
         resolve: {
