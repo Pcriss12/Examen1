@@ -1,9 +1,9 @@
-<section>
-  <div class="">
+<section class="container">
+  <div class="col-md-2 col-md-offset-10 searchStyle">
       <span class="fa fa-search"><input id="search" type="text" name="nameFilter" ng-model="ctrl.nameFilter" placeholder="Buscar Propiedad"></span>
-    </div>
+  </div>
 </section>
-<section>
+<section class="container-fluid">
   <div class="col-md-4" ng-repeat="userProperty in ctrl.properties | filter:ctrl.nameFilter">
     <div class="card">
       <div class="card-content">

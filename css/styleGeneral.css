@@ -1,25 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,900);
+body {
+  width: 100%;
+  background: url("../img/background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+
 .card {
   background: #FFF;
   border: 1px solid #AAA;
-  border-bottom: 3px solid #BBB;
+  border-bottom: 1px solid #BBB;
   padding: 0px;
-  margin-top: 5em;
+  margin-top: 2em;
   overflow: hidden;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Roboto', sans-serif;
-  -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-body {
   margin: 1em;
 }
+
 .card-header {
   width: 100%;
   color: #2196F3;
   border-bottom: 3px solid #BBB;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Roboto', sans-serif;
   padding: 0px;
   margin-top: 0px;
@@ -29,7 +35,7 @@
 }
 
 .card-header {
-  background-color: #2c3e50;
+  background-color: #e74c3c;
   color: #FFFFFF;
   border-bottom: 3px solid #BBB;
   font-family: 'Roboto', sans-serif;
@@ -39,22 +45,29 @@
   -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#btnBuy{
-  border: 1px solid #2c3e50;
+
+
+/*----------botones---------*/
+
+#btnBuy {
+  border: 1px solid #e74c3c;
   border-radius: 30px;
   background: none;
   padding: 5px 20px;
   font-size: 16px;
+  color: #e74c3c;
   margin: 15px
 }
-#btnBuy:hover{
-  border: 1px solid #2c3e50;
+
+#btnBuy:hover {
+  border: 1px solid #e74c3c;
   border-radius: 30px;
-  background: #2c3e50;
+  background: #e74c3c;
   color: #f6f6f6;
   transition: all 1s ease;
 }
-.btnButton{
+
+.btnButton {
   border: 1px solid #2c3e50;
   border-radius: 30px;
   background: none;
@@ -62,7 +75,7 @@
   font-size: 16px;
   margin: 20px 0
 }
-.btnButton:hover{
+.btnButton:hover {
   border: 1px solid #2c3e50;
   border-radius: 30px;
   background: #2c3e50;
@@ -70,23 +83,221 @@
   transition: all 1s ease;
 }
 
-.selectStyles label{
+.btnButtonReg {
+  border: 2px solid rgba(85, 40, 10, 1);
+  border-radius: 30px;
+  background: none;
+  padding: 4px 25px;
+  font-size: 16px;
+  color: rgba(85, 40, 10, 1);
+  margin: 16px 0
+}
+.btnButtonReg:hover {
+  border: 2px solid rgba(85, 40, 10, 1);
+  border-radius: 30px;
+  background: rgba(85, 40, 10, 1);
+  color: #f6f6f6;
+  transition: all 1s ease;
+}
+
+.selectStyles label {
   font-size: 16px;
   font-weight: 300;
 }
-.selectStyles select{
+
+.selectStyles select {
   font-size: 14px;
   border-radius: 20px;
   padding: 5px;
 }
 
+
 /*-----------------estilos de formulario------------------*/
-.formStyle label{
-  color: #aaaaaa;
-  font-size: 16px;
-  font-weight: 200;
+
+.colorBack {
+  background-color: rgba(127, 140, 141, 0.8);
+  border: 1px solid rgba(127, 140, 141, 0.8);
+  border-radius: 10px;
+  width: 380px;
 }
-.formStyle input{
+
+.formStyle label {
+  color: rgba(85, 40, 10, 1);
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.formStyle input {
+  border: 1px solid rgba(149, 165, 166, 1.0);
+  background-color: rgba(189, 195, 199, 0.5);
+  border-radius: 20px;
+  width: 300px;
+  padding: 6px 0 6px 15px;
+  color: rgba(85, 40, 10, 1);
+  outline: none;
+}
+.formStyle input.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c;
+}
+
+.formStyle input.ng-valid.ng-touched {
+  border: 1px solid #2ecc71;
+}
+
+.formStyle input.ng-invalid.ng-touched.ng-empty {
+  border: 1px solid #3498db;
+}
+.btnStyleFile label {
+  color: rgba(85, 40, 10, 1);
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/*input*/
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  margin-top: 15px;
+  max-width: 80%;
+  font-size: 1.25rem;/* 20px */
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;/* 10px 20px */
+}
+
+.no-js .inputfile+label {
+  display: none;
+}
+
+.inputfile:focus+label, .inputfile.has-focus+label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+label * {
+  /* pointer-events: none; */
+  /* in case of FastClick lib use */
+}
+
+.inputfile+label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+.inputfile-2+label {
+  color: #d3394c;
+  border: 2px solid currentColor;
+  border-radius: 20px;
+}
+
+.inputfile-2:focus+label, .inputfile-2.has-focus+label, .inputfile-2+label:hover {
+  color: #722040;
+}
+
+
+/*-------------nav-------------*/
+
+nav.navbar-findcond {
+  background: #fff;
+  border-color: #ccc;
+  box-shadow: 0 0 2px 0 #ccc;
+}
+
+nav.navbar-findcond a {
+  color: #f14444;
+}
+
+nav.navbar-findcond ul.navbar-nav a {
+  color: #f14444;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: #fff;
+}
+
+nav.navbar-findcond ul.navbar-nav a:hover {
+  background: none;
+  border-color: #f14444;
+}
+
+nav.navbar-findcond li.divider {
+  background: #ccc;
+}
+
+nav.navbar-findcond button.navbar-toggle {
+  background: #f14444;
+  border-radius: 2px;
+}
+
+nav.navbar-findcond button.navbar-toggle:hover {
+  background: #999;
+}
+
+nav.navbar-findcond button.navbar-toggle>span.icon-bar {
+  background: #fff;
+}
+
+nav.navbar-findcond ul.dropdown-menu {
+  border: 0;
+  background: #fff;
+  border-radius: 4px;
+  margin: 4px 0;
+  box-shadow: 0 0 4px 0 #ccc;
+}
+
+nav.navbar-findcond ul.dropdown-menu>li>a {
+  color: #444;
+}
+
+nav.navbar-findcond ul.dropdown-menu>li>a:hover {
+  background: #f14444;
+  color: #fff;
+}
+
+nav.navbar-findcond span.badge {
+  background: #f14444;
+  font-weight: normal;
+  font-size: 11px;
+  margin: 0 4px;
+}
+
+nav.navbar-findcond span.badge.new {
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+}
+
+
+/*------------searchStyle-------------------*/
+
+.searchStyle input {
   border: 1px solid #aaaaaa;
   border-radius: 20px;
+  padding: 5px 20px 5px 10px;
+  margin-left: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.clearFix {
+  clear: both;
 }

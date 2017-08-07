@@ -10,7 +10,7 @@
     $stateProvider
       .state('landing', {
         url: '/landing',
-        templateUrl: './components/landing/landing.view.html',
+        templateUrl: './components/landing/landing.view.html'
       })
       .state('landing.regPlayer', {
         url: '/regPlayer',

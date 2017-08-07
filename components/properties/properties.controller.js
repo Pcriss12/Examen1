@@ -49,9 +49,10 @@
         player,
         propertySelected
       }
+      PlayerService.updatePlayer(buy);
       PropertyService.updateProperty(buy);
       init();
-      ctrl.userList = '';
+      propertyCtrl.userList = '';
     };
   };
 })();

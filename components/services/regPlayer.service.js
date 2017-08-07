@@ -61,10 +61,12 @@
       return playerList;
     }
     function _updatePlayer(pObjPlayer) {
+      var buyProperty = '';
       var playerList = _getPlayers();
       for (var i = 0; i < playerList.length; i++) {
-        if (playerList[i].code == pObjPlayer.code) {
-          playerList[i] = pObjPlayer;
+        if (playerList[i].code == pObjPlayer.player.code) {
+          buyProperty = playerList[i].money - pObjPlayer.propertySelected.price;
+          playerList[i].money = buyProperty;
         }
       }
       localStorage.setItem('lsPlayerList', JSON.stringify(playerList));
