@@ -73,6 +73,7 @@ body {
   background: none;
   padding: 5px 20px;
   font-size: 16px;
+  color: #e74c3c;
   margin: 20px 0
 }
 .btnButton:hover {
@@ -255,6 +256,13 @@ nav.navbar-findcond span.badge.new {
 }
 .line{
   border-bottom: 2px solid #f14444;
+}
+
+.imgStyle label {
+  color: rgba(85, 40, 10, 1);
+  padding: 14px 0 10px 0;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 

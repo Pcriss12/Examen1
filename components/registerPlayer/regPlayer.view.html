@@ -24,12 +24,12 @@
             <input type="text" name="money" ng-model="ctrl.money" value="" required  pattern="[0-9]{2,}">
           </div>
       </div>
-      <div class="col-sm-10">
-        <label for="file-2">Imagen</label>
+      <div class="col-sm-10 imgStyle">
+        <label for="photo">Imagen</label>
         <input type="file" name="photo" ng-model="ctrl.photo" value="" id="photo">
       </div>
         <div class="col-sm-10">
-          <input type="button"  class="btnButtonReg" name="Registrar" value="Register" ng-click="ctrl.preSave()" ng-disabled="frmRegPlayer.$invalid">
+          <input type="button"  class="btnButtonReg" name="Registrar" value="Registrar" ng-disabled="frmRegPlayer.$invalid" ng-click="ctrl.preSave()" >
         </div>
       </div>
     </form>
