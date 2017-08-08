@@ -75,7 +75,7 @@
       var playerList = _getPlayers();
       var Validation = false;
       for (var i = 0; i < playerList.length; i++) {
-        if (playerList[i].identification == pEditPlayer.identification) {
+        if (playerList[i].code == pEditPlayer.code) {
           Validation = true;
         }
       }

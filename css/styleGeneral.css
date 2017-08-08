@@ -68,7 +68,7 @@ body {
 }
 
 .btnButton {
-  border: 1px solid #2c3e50;
+  border: 1px solid #e74c3c;
   border-radius: 30px;
   background: none;
   padding: 5px 20px;
@@ -76,9 +76,9 @@ body {
   margin: 20px 0
 }
 .btnButton:hover {
-  border: 1px solid #2c3e50;
+  border: 1px solid #e74c3c;
   border-radius: 30px;
-  background: #2c3e50;
+  background: #e74c3c;
   color: #f6f6f6;
   transition: all 1s ease;
 }
@@ -115,10 +115,11 @@ body {
 /*-----------------estilos de formulario------------------*/
 
 .colorBack {
-  background-color: rgba(127, 140, 141, 0.8);
+  background-color: #fff;
   border: 1px solid rgba(127, 140, 141, 0.8);
   border-radius: 10px;
   width: 380px;
+  margin-top: 50px;
 }
 
 .formStyle label {
@@ -154,67 +155,6 @@ body {
   font-size: 15px;
   font-weight: bold;
 }
-
-
-/*input*/
-
-.inputfile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.inputfile+label {
-  margin-top: 15px;
-  max-width: 80%;
-  font-size: 1.25rem;/* 20px */
-  font-weight: 700;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  padding: 0.625rem 1.25rem;/* 10px 20px */
-}
-
-.no-js .inputfile+label {
-  display: none;
-}
-
-.inputfile:focus+label, .inputfile.has-focus+label {
-  outline: 1px dotted #000;
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.inputfile+label * {
-  /* pointer-events: none; */
-  /* in case of FastClick lib use */
-}
-
-.inputfile+label svg {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-  fill: currentColor;
-  margin-top: -0.25em;
-  /* 4px */
-  margin-right: 0.25em;
-  /* 4px */
-}
-
-.inputfile-2+label {
-  color: #d3394c;
-  border: 2px solid currentColor;
-  border-radius: 20px;
-}
-
-.inputfile-2:focus+label, .inputfile-2.has-focus+label, .inputfile-2+label:hover {
-  color: #722040;
-}
-
 
 /*-------------nav-------------*/
 
@@ -294,9 +234,29 @@ nav.navbar-findcond span.badge.new {
   border-radius: 20px;
   padding: 5px 20px 5px 10px;
   margin-left: 10px;
+  margin-bottom: 20px;
   font-size: 14px;
   outline: none;
 }
+/*--------------------------------------------------*/
+.titleList h4{
+  font-weight: bold;
+  font-size: 16px;
+  color: rgba(85, 40, 10, 1);
+}
+.titleList h6{
+  font-size: 14px;
+  color: rgba(85, 40, 10, 1);
+}
+.titleList span{
+  font-weight: bold;
+  font-size: 15px;
+  color: rgba(85, 40, 10, 1);
+}
+.line{
+  border-bottom: 2px solid #f14444;
+}
+
 
 .clearFix {
   clear: both;

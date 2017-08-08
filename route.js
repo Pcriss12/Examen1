@@ -34,7 +34,17 @@
         controller: 'PropertyController',
         controllerAs: 'ctrl'
       })
-
+      .state('landing.lists', {
+        url: '/lists',
+        templateUrl: './components/lists/lists.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', function($ocLazyLoad){
+            return $ocLazyLoad.load('./components/registerPlayer/regPlayer.controller.js')
+          }]
+        },
+        controller: 'PlayerController',
+        controllerAs: 'ctrl'
+      })
 
     $urlRouterProvider.otherwise('/landing');
   }
