@@ -8,13 +8,25 @@
 
   function PropertyController(PropertyService, PlayerService) {
     var propertyCtrl = this;
+    loadPlayer();
+    loadProperties();
     propertyCtrl.propertySelected = {};
 
+    function loadPlayer() {
+      PlayerService.getPlayers().then(function(response) {
+        propertyCtrl.players = response.data;
+      })
+    }
+    function loadProperties() {
+      PropertyService.getProperty().then(function(response) {
+        propertyCtrl.properties = response.data;
+      })
+    }
     function init() {
-      propertyCtrl.properties = PropertyService.getProperty();
+      propertyCtrl.properties = [];
       propertyCtrl.property = {};
       propertyCtrl.propertySelected = {};
-      propertyCtrl.players = PlayerService.getPlayers();
+      propertyCtrl.players = [];
     }init();
 
     propertyCtrl.Buy = function(property){

@@ -8,10 +8,18 @@
 
   function PlayerController(PlayerService, ImageService, Upload) {
     var playerCtrl = this;
+    loadPlayer();
+
     playerCtrl.cloudObj = ImageService.getConfiguration();
 
+    function loadPlayer() {
+      PlayerService.getPlayers().then(function(response) {
+        playerCtrl.players = response.data;
+      })
+    }
+
     function init() {
-      playerCtrl.players = PlayerService.getPlayers();
+      playerCtrl.players = [];
       playerCtrl.player = {};
     }init();
 
@@ -44,6 +52,7 @@
     };
 
     playerCtrl.getInfo = function(pPlayer){
+      playerCtrl._id = pPlayer._id;
       playerCtrl.code = pPlayer.code;
       playerCtrl.name = pPlayer.name;
       playerCtrl.nickName = pPlayer.nickName;
@@ -53,6 +62,7 @@
 
     playerCtrl.update = function(pimage) {
       var EditPlayer = {
+        _id: playerCtrl._id,
         code: playerCtrl.code,
         name: playerCtrl.name,
         nickName: playerCtrl.nickName,
