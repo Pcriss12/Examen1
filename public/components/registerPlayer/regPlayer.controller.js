@@ -19,7 +19,6 @@
     }
 
     function init() {
-      playerCtrl.players = [];
       playerCtrl.player = {};
     }init();
 
@@ -42,7 +41,7 @@
         name: playerCtrl.name,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
-        url: biografy,
+        url: biografy.replace(/['"]+/g, ''),
         photo: pimage
 
       }
@@ -89,6 +88,8 @@
       playerCtrl.money = '';
       playerCtrl.url = '';
       playerCtrl.photo = '';
+
+      setTimeout(location.reload.bind(location), 1500);
     };
   };
 })();

@@ -23,10 +23,8 @@
       })
     }
     function init() {
-      propertyCtrl.properties = [];
       propertyCtrl.property = {};
       propertyCtrl.propertySelected = {};
-      propertyCtrl.players = [];
     }init();
 
     propertyCtrl.Buy = function(property){
@@ -34,7 +32,7 @@
       sendProperty(property);
     };
   function sendProperty(property) {
-      propertyCtrl.propertySelected = {};
+      var propertySelected = {};
       propertyCtrl.propertySelected = property;
     }
     function sendProperty(property) {

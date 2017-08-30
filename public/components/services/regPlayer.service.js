@@ -65,8 +65,8 @@
           playerList[i].money = buyProperty;
           var buyer =  playerList[i];
         }
-       return $http.put('http://localhost:3000/api/playersUpdate',buyer);
       }
+       return $http.put('http://localhost:3000/api/playersUpdate',buyer);
     }
 
     function _noRepeat(pEditPlayer, pList) {

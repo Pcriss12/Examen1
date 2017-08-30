@@ -737,11 +737,11 @@
      var propertyList = pProperties;
       for (var i = 0; i < propertyList.length; i++) {
         if (propertyList[i].name == pPropertyBuy.propertySelected.name) {
-          propertyList[i].ownedby = pPropertyBuy.player;
+          propertyList[i].ownedby = pPropertyBuy.player.name;
           var buyProperty =  propertyList[i];
         }
-        return $http.put('http://localhost:3000/api/propertiesUpdate',buyProperty);
       }
+        return $http.put('http://localhost:3000/api/propertiesUpdate',buyProperty);
     }
 
   };

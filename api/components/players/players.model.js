@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var PlayerSchema = new mongoose.Schema({
-        code: String,
+        code: Number,
         name: String,
         nickName: String,
-        money: String,
+        money: Number,
         url: String,
         photo: String
 	
