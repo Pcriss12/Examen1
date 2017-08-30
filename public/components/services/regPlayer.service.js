@@ -55,18 +55,22 @@
       return $http.get('http://localhost:3000/api/playersGet');
     }
 
-    function _updatePlayer(pObjPlayer) {
-      return $http.put('http://localhost:3000/api/playersUpdate',pObjPlayer);
+    function _updatePlayer(pObjPlayer, pPlayers) {
+     
+      var buyProperty = '';
+      var playerList = pPlayers;
       for (var i = 0; i < playerList.length; i++) {
         if (playerList[i].code == pObjPlayer.player.code) {
           buyProperty = playerList[i].money - pObjPlayer.propertySelected.price;
           playerList[i].money = buyProperty;
+          var buyer =  playerList[i];
         }
+       return $http.put('http://localhost:3000/api/playersUpdate',buyer);
       }
-     
     }
-    function _noRepeat(pEditPlayer) {
-      var playerList = _getPlayers();
+
+    function _noRepeat(pEditPlayer, pList) {
+      var playerList = pList;
       var Validation = false;
       for (var i = 0; i < playerList.length; i++) {
         if (playerList[i].code == pEditPlayer.code) {

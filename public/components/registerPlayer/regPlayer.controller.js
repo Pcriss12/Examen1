@@ -36,19 +36,25 @@
     };
 
     playerCtrl.save = function(pimage) {
+      var biografy = localStorage.getItem('lsUrl');
       var newPlayer = {
         code: playerCtrl.code,
         name: playerCtrl.name,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
+        url: biografy,
         photo: pimage
+
       }
-      var Validation = PlayerService.noRepeat(newPlayer);
+      var Validation = PlayerService.noRepeat(newPlayer, playerCtrl.players);
       if (Validation === false){
         PlayerService.setPlayers(newPlayer);
+        init();
+        clear();
+      }else{
+        console.log('Usuario ya existe');
       };
-      init();
-      clear();
+
     };
 
     playerCtrl.getInfo = function(pPlayer){
@@ -57,6 +63,7 @@
       playerCtrl.name = pPlayer.name;
       playerCtrl.nickName = pPlayer.nickName;
       playerCtrl.money = pPlayer.money;
+      playerCtrl.url  = pPlayer.url;
       playerCtrl.photo = pPlayer.photo;
     };
 
@@ -67,6 +74,7 @@
         name: playerCtrl.name,
         nickName: playerCtrl.nickName,
         money: playerCtrl.money,
+        url: playerCtrl.url,
         photo: pimage
       };
       PlayerService.updatePlayer(EditPlayer);
@@ -79,6 +87,7 @@
       playerCtrl.name = '';
       playerCtrl.nickName = '';
       playerCtrl.money = '';
+      playerCtrl.url = '';
       playerCtrl.photo = '';
     };
   };

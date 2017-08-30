@@ -44,7 +44,7 @@
       propertyCtrl.propertySelected = propertySelected;
     }
     propertyCtrl.perform = function(userPlayer){
-      var playerList =  PlayerService.getPlayers();
+      var playerList = propertyCtrl.players;
       var player = '';
 
       for (var i = 0; i < playerList.length; i++) {
@@ -52,7 +52,6 @@
           player = playerList[i];
         }
       }
-
       update(player, propertyCtrl.propertySelected);
     };
 
@@ -61,8 +60,8 @@
         player,
         propertySelected
       }
-      PlayerService.updatePlayer(buy);
-      PropertyService.updateProperty(buy);
+      PlayerService.updatePlayer(buy, propertyCtrl.players);
+      PropertyService.updateProperty(buy, propertyCtrl.properties);
       init();
       propertyCtrl.userList = '';
     };

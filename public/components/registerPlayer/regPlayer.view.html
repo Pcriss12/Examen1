@@ -28,6 +28,10 @@
         <label for="photo">Imagen</label>
         <input type="file" name="photo" ng-model="ctrl.photo" value="" id="photo">
       </div>
+      <div class="col-sm-10 imgStyle">
+        <label for="">Biografía</label>
+        <a href=""  id="url"></a>
+      </div>
         <div class="col-sm-10">
           <input type="button"  class="btnButtonReg" name="Registrar" value="Registrar" ng-disabled="frmRegPlayer.$invalid" ng-click="ctrl.preSave()" >
         </div>
@@ -35,3 +39,20 @@
     </form>
   </section>
 </main>
+
+<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script>
+          const link = document.getElementById('url'); 
+                    client.pick({  
+        accept: ['image/*', '.pdf', 'video/mp4','docx','.txt']
+
+      }).then(function(result){  
+         const fileUrl = result.filesUploaded   [  
+            0
+         ]   .url;  
+                    link.href=fileUrl;  
+                    link.innerHTML=fileUrl; 
+                    console.log(fileUrl);
+                    localStorage.setItem('lsUrl',JSON.stringify(fileUrl));
+      });
+</script>

@@ -20,6 +20,16 @@
     <!-- Scripts Generales -->
     <script src="./bower_components/jquery/dist/jquery.min.js"></script>
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <script>
+        var client = filestack.init('AMghtR7Q9TkOtaMYxfHNAz');
+        function showPicker() {
+            client.pick({
+            }).then(function(result) {
+                console.log(JSON.stringify(result.filesUploaded))
+            });
+        }
+    </script>
 
     <!-- AngularJS -->
     <script src="./bower_components/angular/angular.min.js"></script>
