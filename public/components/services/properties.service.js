@@ -733,12 +733,14 @@
         return $http.get('http://localhost:3000/api/propertiesGet');
     }
 
-    function _updateProperty(pPropertyBuy) {
-        return $http.put('http://localhost:3000/api/propertiesUpdate',pPropertyBuy);
+    function _updateProperty(pPropertyBuy , pProperties) {
+     var propertyList = pProperties;
       for (var i = 0; i < propertyList.length; i++) {
         if (propertyList[i].name == pPropertyBuy.propertySelected.name) {
           propertyList[i].ownedby = pPropertyBuy.player;
+          var buyProperty =  propertyList[i];
         }
+        return $http.put('http://localhost:3000/api/propertiesUpdate',buyProperty);
       }
     }
 
